@@ -1,0 +1,106 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-center",
+      "description": "A woman in a stylish straw hat looks towards the camera.",
+      "imageUrl": "https://images.unsplash.com/photo-1595708937245-5eef7aec4614?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21hbiUyMGhhdHxlbnwwfHx8fDE3NjI0NjIxNjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman hat"
+    },
+    {
+      "id": "hero-left",
+      "description": "Close-up of a woman's ear with elegant earrings.",
+      "imageUrl": "https://images.unsplash.com/photo-1623162867605-71426273f6e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMGVhcnJpbmd8ZW58MHx8fHwxNzYyNTE3MDg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman earring"
+    },
+    {
+      "id": "hero-right",
+      "description": "Close-up of a woman's hands with delicate bracelets.",
+      "imageUrl": "https://images.unsplash.com/photo-1731406322274-fb018de6fa97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b21hbiUyMGJyYWNlbGV0fGVufDB8fHx8MTc2MjUxNzA4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman bracelet"
+    },
+    {
+      "id": "welcome-image",
+      "description": "A woman in a linen blazer peeks from behind a large dried palm leaf.",
+      "imageUrl": "https://images.unsplash.com/photo-1603344797033-f0f4f587ab60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMGZhc2hpb258ZW58MHx8fHwxNzYyNTEwNjEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman fashion"
+    },
+    {
+      "id": "sale-background",
+      "description": "Close-up of a woman's neck showing a gold pendant necklace on a white blouse.",
+      "imageUrl": "https://images.unsplash.com/photo-1731406322316-e4aadc43a734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMG5lY2lsYWNlfGVufDB8fHx8MTc2MjQzMzk1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman necklace"
+    },
+    {
+      "id": "athah-brand-story",
+      "description": "An abstract, artistic shot of a delicate flower blooming.",
+      "imageUrl": "https://images.unsplash.com/photo-1444021465936-c6ca81d39b84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmbG93ZXIlMjBibG9vbXxlbnwwfHx8fDE3NjgwNDU3Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "flower bloom"
+    },
+    {
+      "id": "cosmos-collection",
+      "description": "Athah COSMOS collection background image. Recommended dimensions: 1920x1080px (16:9 aspect ratio). Use 1920x1200px for safe parallax coverage.",
+      "imageUrl": "https://img.freepik.com/free-photo/background-golden-particle-dust-powder_1017-32800.jpg?semt=ais_user_personalization&w=740&q=80",
+      "imageHint": "cosmos background"
+    },
+    {
+      "id": "silk-saree-1",
+      "description": "A model wearing a luxurious golden silk saree.",
+      "imageUrl": "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMGZhc2hpb258ZW58MHx8fHwxNzYyNTEwNjEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman fashion"
+    },
+    {
+      "id": "silk-saree-2",
+      "description": "A close-up of the intricate embroidery on a silk saree.",
+      "imageUrl": "https://images.unsplash.com/photo-1745091946873-92e0a0a7819c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZW1icm9pZGVyeSUyMGRldGFpbHxlbnwwfHx8fDE3NjI0Njk3NDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "embroidery detail"
+    },
+    {
+      "id": "womens-collection-bg",
+      "description": "A beautiful, artistic shot of flowing silk fabric.",
+      "imageUrl": "https://images.unsplash.com/photo-1594835630922-20f54b6c2c89?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "silk fabric"
+    },
+    {
+      "id": "mens-collection-bg",
+      "description": "A close-up of high-quality linen texture.",
+      "imageUrl": "https://images.unsplash.com/photo-1624823267789-9430a5753b82?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "linen texture"
+    },
+    {
+      "id": "kurta-1",
+      "description": "A comfortable and stylish men's kurta.",
+      "imageUrl": "https://images.unsplash.com/photo-1744551358303-46edae8b374b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZW5zJTIwa3VydGF8ZW58MHx8fHwxNzYyNTE3MDg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mens kurta"
+    },
+    {
+      "id": "kurta-2",
+      "description": "Close up of the collar of a mens kurta.",
+      "imageUrl": "https://images.unsplash.com/photo-1760040803894-165c1f834c0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzaGlydCUyMGNvbGxhcnxlbnwwfHx8fDE3NjI1MTcwODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shirt collar"
+    },
+    {
+      "id": "dress-1",
+      "description": "A woman in a modern fusion-wear dress.",
+      "imageUrl": "https://images.unsplash.com/photo-1495385794356-15371f348c31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjBkcmVzc3xlbnwwfHx8fDE3NjI1MTcwODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman dress"
+    },
+    {
+      "id": "dress-2",
+      "description": "The flowing fabric of a contemporary dress.",
+      "imageUrl": "https://images.unsplash.com/photo-1758923530847-76084cc4c485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmYWJyaWMlMjBkcmVzc3xlbnwwfHx8fDE3NjI1MTcwODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fabric dress"
+    },
+    {
+      "id": "accessories-1",
+      "description": "A collection of traditional Indian jewelry.",
+      "imageUrl": "https://images.unsplash.com/photo-1724896730911-c3b6078d6ace?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxqZXdlbHJ5JTIwZ29sZHxlbnwwfHx8fDE3NjI1MTcwODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "jewelry gold"
+    },
+    {
+      "id": "accessories-2",
+      "description": "A pair of ornate traditional earrings.",
+      "imageUrl": "https://images.unsplash.com/photo-1651328906381-5f891e5a4f04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlYXJyaW5ncyUyMGdvbGR8ZW58MHx8fHwxNzYyNTE3MDg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "earrings gold"
+    }
+  ]
+}

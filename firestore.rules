@@ -1,0 +1,113 @@
+/**
+ * @file Firestore Security Rules
+ * @description Broad permissions for authenticated users to manage the admin dashboard.
+ * @dataStructure
+ *  - /products/{productId}: Stores product information.
+ *  - /products/{productId}/reviews/{reviewId}: Stores reviews for a specific product.
+ *  - /users/{userId}: Stores user profile information.
+ *  - /users/{userId}/orders/{orderId}: Stores order information for a specific user.
+ *  - /users/{userId}/shipping_addresses/{shippingAddressId}: Stores shipping addresses for a specific user.
+ *  - /coupons/{couponId}: Stores coupon codes and their details.
+ *  - /admins/{adminId}: Stores admin user IDs.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Publicly readable product catalog. Admins can modify products.
+     */
+    match /products/{productId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    /**
+     * @description Reviews are public. Authenticated users can manage their own. Admins can manage all.
+     */
+    match /products/{productId}/reviews/{reviewId} {
+      allow get, list: if true;
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isOwner(resource.data.userId) || isAdmin();
+    }
+
+    /**
+     * @description User profile data. Users can manage their own. Admins can see and manage all.
+     * Important: request.auth.uid == userId check comes first to avoid recursion when isAdmin() calls get().
+     */
+    match /users/{userId} {
+      allow create: if request.auth.uid == userId;
+      allow get: if request.auth.uid == userId || isAdmin();
+      allow list: if isAdmin();
+      allow update: if request.auth.uid == userId || isAdmin();
+      allow delete: if isAdmin();
+    }
+    
+    /**
+     * @description Order data. Scoped to users, but admins have full access.
+     */
+    match /users/{userId}/orders/{orderId} {
+        allow read, write: if request.auth.uid == userId || isAdmin();
+    }
+
+    /**
+     * @description Shipping addresses. Scoped to users, but admins have full access.
+     */
+    match /users/{userId}/shipping_addresses/{shippingAddressId} {
+        allow read, write: if request.auth.uid == userId || isAdmin();
+    }
+
+    /**
+     * @description Coupon data. Publicly readable. Admins can manage.
+     */
+    match /coupons/{couponId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+    
+    /**
+     * @description Collection group query for orders. Allows any admin to list all orders across all users.
+     */
+    match /{path=**}/orders/{orderId} {
+      allow get, list: if isAdmin();
+      allow write: if isAdmin();
+    }
+
+    /**
+     * @description Admins collection. 
+     */
+    match /admins/{adminId} {
+      allow get, list: if isSignedIn();
+      allow create: if isSignedIn() && (request.auth.uid == adminId || isAdmin());
+      allow update, delete: if isAdmin();
+    }
+    
+    // Fallback for any other collections not explicitly matched
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Helper Functions ---
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(ownerId) {
+      return isSignedIn() && request.auth.uid == ownerId;
+    }
+    
+    function isAdmin() {
+      // Verifies admin role by checking:
+      // 1. Hardcoded superuser UID (requested by user)
+      // 2. Existence in the admins collection
+      // 3. The 'role' field in the user document
+      return isSignedIn() && (
+        request.auth.uid == 'TjtsSHoh2dY8TS4wUMwQzuPvIqh2' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin')
+      );
+    }
+  }
+}
