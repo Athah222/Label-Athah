@@ -61,16 +61,16 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-secondary/50">
-      <Card className="relative mx-auto w-full max-w-sm">
-         <Link href="/" className="absolute left-4 top-4 flex items-center gap-1 font-light text-muted-foreground hover:text-foreground">
+    <div className="flex min-h-screen items-center justify-center bg-secondary/50 px-4">
+      <Card className="relative mx-auto w-full max-w-sm border-none shadow-xl">
+         <Link href="/" className="absolute left-4 top-4 flex items-center gap-1 font-light text-muted-foreground hover:text-foreground transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Back to home
         </Link>
-        <CardHeader>
-          <Link href="/" className="mb-4 pt-8 flex justify-center">
+        <CardHeader className="pt-12">
+          <Link href="/" className="mb-4 flex justify-center">
             <Image 
-              src="/Athah logo (off white) with golden pallet final.png" 
+              src="/logo.png" 
               alt="Athah Logo" 
               width={150} 
               height={50} 
@@ -101,8 +101,8 @@ export default function LoginPage() {
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
                   <Link
-                    href="#"
-                    className="ml-auto inline-block text-sm underline"
+                    href="/forgot-password"
+                    className="ml-auto inline-block text-sm underline hover:text-primary transition-colors"
                   >
                     Forgot your password?
                   </Link>
@@ -124,7 +124,7 @@ export default function LoginPage() {
           </form>
           <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{' '}
-            <Link href="/signup" className="underline">
+            <Link href="/signup" className="underline hover:text-primary transition-colors">
               Sign up
             </Link>
           </div>
