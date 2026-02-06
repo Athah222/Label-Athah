@@ -84,7 +84,7 @@ export default function HomePage() {
                 )}
             </div>
             <div className="text-left md:pl-12">
-              <h2 className="font-headline text-5xl md:text-6xl text-primary">ATHAH</h2>
+              <h2 className="font-headline text-5xl md:text-6xl text-[#9b6d4b]">ATHAH</h2>
               <p className="mt-4 text-lg text-muted-foreground">A new beginning.<br />A bloom shaped from chaos into clarity.</p>
               <p className="mt-6 text-foreground">Handloom stories, handcrafted from life’s little moments.</p>
             </div>

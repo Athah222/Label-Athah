@@ -266,7 +266,7 @@ export default function CheckoutPage() {
           address: `${shippingAddress.street}, ${shippingAddress.city}`,
         },
         theme: {
-          color: '#8c7a6b'
+          color: '#cab973'
         }
       };
 

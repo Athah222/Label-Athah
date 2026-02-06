@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Instagram, Facebook } from 'lucide-react';
@@ -28,33 +29,33 @@ export default function Footer() {
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">Timeless Elegance, Redefined.</p>
              <div className="mt-6 flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Facebook className="h-5 w-5" /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary"><PinterestIcon className="h-5 w-5" /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Instagram className="h-5 w-5" /></Link>
+              <Link href="#" className="text-muted-foreground hover:text-[#7a7507] transition-colors"><Facebook className="h-5 w-5" /></Link>
+              <Link href="#" className="text-muted-foreground hover:text-[#7a7507] transition-colors"><PinterestIcon className="h-5 w-5" /></Link>
+              <Link href="#" className="text-muted-foreground hover:text-[#7a7507] transition-colors"><Instagram className="h-5 w-5" /></Link>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:col-span-8 md:grid-cols-4">
             <div>
               <h3 className="font-semibold tracking-wider text-foreground">Shop</h3>
               <ul className="mt-4 space-y-2">
-                <li><Link href="/products" className="text-sm text-muted-foreground hover:text-primary">All Collections</Link></li>
-                <li><Link href="/products/women" className="text-sm text-muted-foreground hover:text-primary">Women's Wear</Link></li>
-                <li><Link href="/products/men" className="text-sm text-muted-foreground hover:text-primary">Men's Wear</Link></li>
+                <li><Link href="/products" className="text-sm text-muted-foreground hover:text-[#7a7507] transition-colors">All Collections</Link></li>
+                <li><Link href="/products/women" className="text-sm text-muted-foreground hover:text-[#7a7507] transition-colors">Women's Wear</Link></li>
+                <li><Link href="/products/men" className="text-sm text-muted-foreground hover:text-[#7a7507] transition-colors">Men's Wear</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold tracking-wider text-foreground">About</h3>
               <ul className="mt-4 space-y-2">
-                <li><Link href="/about" className="text-sm text-muted-foreground hover:text-primary">Our Story</Link></li>
-                <li><Link href="#" className="text-sm text-muted-foreground hover:text-primary">Contact</Link></li>
+                <li><Link href="/about" className="text-sm text-muted-foreground hover:text-[#7a7507] transition-colors">Our Story</Link></li>
+                <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-[#7a7507] transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold tracking-wider text-foreground">Help</h3>
               <ul className="mt-4 space-y-2">
-                 <li><Link href="/faq" className="text-sm text-muted-foreground hover:text-primary">FAQ</Link></li>
-                <li><Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service" className="text-sm text-muted-foreground hover:text-primary">Terms of Service</Link></li>
+                 <li><Link href="/faq" className="text-sm text-muted-foreground hover:text-[#7a7507] transition-colors">FAQ</Link></li>
+                <li><Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-[#7a7507] transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms-of-service" className="text-sm text-muted-foreground hover:text-[#7a7507] transition-colors">Terms of Service</Link></li>
               </ul>
             </div>
             <div className="col-span-2 md:col-span-1">

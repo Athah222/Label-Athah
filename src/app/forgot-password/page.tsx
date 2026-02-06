@@ -81,7 +81,7 @@ export default function ForgotPasswordPage() {
           <CardDescription className="text-center text-base mt-2">
             {isSubmitted 
               ? "We've sent recovery instructions to your email."
-              : "Enter your email address and we'll send you a secure link to reset your account password."}
+              : "Enter your email address and we'll send you a secure link to reset your password."}
           </CardDescription>
         </CardHeader>
 

@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { ArrowLeft, ChevronDown, User, Truck, Package, Mail, CreditCard, Copy, Check } from 'lucide-react';
+import { ArrowLeft, ChevronDown, User, Truck, Package, Mail, CreditCard, Copy, Check, Loader2 } from 'lucide-react';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useFirestore, useDoc, useMemoFirebase } from '@/firebase';
 import { doc, updateDoc } from 'firebase/firestore';
@@ -34,7 +34,6 @@ export default function AdminOrderDetailsPage() {
   );
   const { data: order, isLoading: isOrderLoading } = useDoc<Order>(orderDocRef);
 
-  // Fetch the customer's user profile
   const userDocRef = useMemoFirebase(
     () => (userId ? doc(firestore, 'users', userId) : null),
     [userId, firestore]
@@ -49,25 +48,40 @@ export default function AdminOrderDetailsPage() {
 
     setIsUpdating(true);
     try {
+      // 1. Update status in Firestore
       await updateDoc(orderDocRef, { status: newStatus });
       
-      // If status is changed to Shipped, send an automated notification email
+      // 2. If status is changed to Shipped, try to send the automated notification
       if (newStatus === 'Shipped') {
         const emailToUse = customer?.email || (userId?.includes('@') ? userId : null);
         
         if (emailToUse) {
-          sendShippingNotificationEmail({
+          const emailResult = await sendShippingNotificationEmail({
             orderId: order.id,
             customerName: customer?.displayName || order.shippingAddress.name || 'Valued Customer',
             customerEmail: emailToUse,
-          }).catch(err => console.error("Shipping email failed to trigger:", err));
-        }
-      }
+          });
 
-      toast({
-        title: 'Status Updated',
-        description: `Order status changed to ${newStatus}.`,
-      });
+          if (emailResult.success) {
+            toast({
+              title: 'Status Updated & Email Sent',
+              description: `Order is now ${newStatus}. Notification sent to ${emailToUse}.`,
+            });
+          } else {
+            // Logically the status updated, but email failed
+            toast({
+              variant: 'destructive',
+              title: 'Status Updated, but Email Failed',
+              description: 'The status changed successfully, but we could not send the automated email. Please check your server configuration.',
+            });
+          }
+        }
+      } else {
+        toast({
+          title: 'Status Updated',
+          description: `Order status changed to ${newStatus}.`,
+        });
+      }
     } catch (error) {
       console.error("Failed to update status: ", error);
       toast({
@@ -92,7 +106,7 @@ export default function AdminOrderDetailsPage() {
   
   if (isOrderLoading) {
     return (
-      <div className="py-4">
+      <div className="py-4 px-4">
         <Skeleton className="h-10 w-48 mb-4" />
         <Skeleton className="h-6 w-1/2 mb-2" />
         <Skeleton className="h-6 w-1/3 mb-8" />
@@ -102,8 +116,6 @@ export default function AdminOrderDetailsPage() {
           </div>
           <div className="space-y-8">
             <Card><CardHeader><Skeleton className="h-8 w-1/2" /></CardHeader><CardContent className="space-y-4"><Skeleton className="h-6 w-full" /><Skeleton className="h-10 w-full" /></CardContent></Card>
-            <Card><CardHeader><Skeleton className="h-8 w-1/3" /></CardHeader><CardContent className="space-y-4"><Skeleton className="h-16 w-full" /></CardContent></Card>
-            <Card><CardHeader><Skeleton className="h-8 w-1/3" /></CardHeader><CardContent className="space-y-4"><Skeleton className="h-16 w-full" /></CardContent></Card>
           </div>
         </div>
       </div>
@@ -148,7 +160,7 @@ Warm regards,
 Team Athah`;
 
   return (
-    <div className="py-4">
+    <div className="py-4 px-4">
       <div className="mb-4">
         <Button onClick={() => router.back()} variant="ghost" className="mb-4">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Orders
@@ -247,7 +259,6 @@ Team Athah`;
 
         {/* Right Column: Summaries & Customer Info */}
         <div className="space-y-6">
-          {/* Order Summary Card */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -260,8 +271,12 @@ Team Athah`;
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="outline" className="h-8 w-40 justify-between" disabled={isUpdating}>
-                                <Badge variant={getStatusVariant(order.status) as any} className="pointer-events-none">{order.status}</Badge>
-                                <ChevronDown className="h-4 w-4 opacity-50" />
+                                {isUpdating ? <Loader2 className="h-3 w-3 animate-spin" /> : (
+                                  <>
+                                    <Badge variant={getStatusVariant(order.status) as any} className="pointer-events-none">{order.status}</Badge>
+                                    <ChevronDown className="h-4 w-4 opacity-50" />
+                                  </>
+                                )}
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end" className="w-40">
@@ -291,7 +306,6 @@ Team Athah`;
             </CardContent>
           </Card>
           
-          {/* Customer Account Card */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -321,7 +335,6 @@ Team Athah`;
             </CardContent>
           </Card>
 
-          {/* Shipping Address Card */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">

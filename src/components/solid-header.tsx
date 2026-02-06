@@ -38,12 +38,6 @@ export function SolidHeader() {
     return () => document.removeEventListener('keydown', down);
   }, []);
 
-  const navLinks = [
-    { href: '/products', label: 'Shop' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
-  ];
-
   return (
     <>
       <header
@@ -65,6 +59,12 @@ export function SolidHeader() {
                   className="font-body text-primary transition-colors hover:text-primary/80"
                 >
                   About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="font-body text-primary transition-colors hover:text-primary/80"
+                >
+                  Contact
                 </Link>
               </nav>
           </div>
