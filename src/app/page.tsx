@@ -158,7 +158,7 @@ export default function HomePage() {
       
        {/* Follow our Journey Section */}
       <section className="relative py-40 bg-primary/5">
-        {journeyImage && <Image src={journeyImage.imageUrl} alt={journeyImage.description} fill className="object-cover object-center" data-ai-hint={journeyImage.imageHint} />}
+        {journeyImage && <Image src="/LW5.jpg" alt={journeyImage.description} fill className="object-cover object-center" data-ai-hint={journeyImage.imageHint} />}
         <div className="absolute inset-0 bg-black/50"/>
         <div className="relative z-10 text-center container mx-auto px-4 text-white">
             <h2 className="font-headline text-5xl md:text-6xl">Follow Our Journey</h2>
