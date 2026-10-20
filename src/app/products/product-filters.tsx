@@ -78,7 +78,7 @@ export function ProductFilters({ categories, maxPrice, onFilterChange, currentFi
                   checked={currentFilters.categories.includes(category)}
                   onCheckedChange={(checked) => handleCategoryChange(category, checked)}
                 />
-                <Label htmlFor={`cat-${category}`} className="font-normal capitalize">{category}</Label>
+                <Label htmlFor={`cat-${category}`} className="font-normal capitalize">{category == "Vest Coats" ? "Waist Co-Ord Set" : category}</Label>
               </div>
             ))}
           </div>

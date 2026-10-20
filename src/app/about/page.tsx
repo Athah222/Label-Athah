@@ -86,7 +86,7 @@ export default function AboutPage() {
                 <div className="relative aspect-video rounded-2xl overflow-hidden group shadow-xl">
                   {craftsmanshipImage && (
                     <Image
-                      src={craftsmanshipImage.imageUrl}
+                      src="/LUNA3.jpg"
                       alt="Embroidery detail"
                       fill
                       className="object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -98,7 +98,7 @@ export default function AboutPage() {
               <div className="flex-1 relative aspect-[3/4] md:aspect-auto rounded-2xl overflow-hidden shadow-2xl">
                 {eleganceImage && (
                   <Image
-                    src={eleganceImage.imageUrl}
+                    src="/cw4.jpg"
                     alt="Ethereal elegance"
                     fill
                     className="object-cover"
