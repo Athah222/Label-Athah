@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Star, Ruler, Hand } from 'lucide-react';
 import { AddToCartForm } from './add-to-cart-form';
 import { ReviewForm } from './review-form';
+import Link from 'next/link';
 import type { Product, Review, ImagePlaceholder } from '@/lib/types';
 import { useFirestore, useUser, useCollection, useMemoFirebase } from '@/firebase';
 import { collection, query, where, getDocs, limit, orderBy } from 'firebase/firestore';
