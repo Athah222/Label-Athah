@@ -75,7 +75,7 @@ export default function HomePage() {
             <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
                 {athahImage && (
                     <Image 
-                        src={athahImage.imageUrl} 
+                        src="/underhero.jpeg" 
                         alt={athahImage.description} 
                         fill 
                         className="object-cover" 

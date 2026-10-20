@@ -18,7 +18,7 @@ export default function ProductsPage() {
           <div className="absolute inset-0 z-10" />
           {collectionImage && (
              <Image
-                src={collectionImage.imageUrl}
+                src="/shopwomen.jpg.jpeg"
                 alt="Shop Women's Wear"
                 fill
                 className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
@@ -39,7 +39,7 @@ export default function ProductsPage() {
            <div className="absolute inset-0 z-10" />
            {collectionImage && (
              <Image
-                src={collectionImage.imageUrl}
+                src="/shopmen.jpg.jpeg"
                 alt="Shop Men's Wear"
                 fill
                 className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
