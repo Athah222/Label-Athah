@@ -166,7 +166,7 @@ export default function HomePage() {
                 Become a part of the Athah story. Follow us on social media for behind-the-scenes content, new arrivals, and style inspiration.
             </p>
             <div className="flex justify-center gap-6 mt-8">
-              <Link href="#" className="text-white hover:text-primary transition-colors"><Instagram className="h-7 w-7"/></Link>
+              <Link href="https://www.instagram.com/label.athah?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0MzIxNw==" className="text-white hover:text-primary transition-colors"><Instagram className="h-7 w-7"/></Link>
               <Link href="#" className="text-white hover:text-primary transition-colors"><Facebook className="h-7 w-7"/></Link>
               <Link href="#" className="text-white hover:text-primary transition-colors"><PinterestIcon className="h-7 w-7"/></Link>
             </div>
